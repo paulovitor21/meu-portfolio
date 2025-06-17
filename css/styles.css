@@ -1,0 +1,83 @@
+/* Animações */
+.hover-shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Menu Responsivo */
+.menu-button {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-button div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    nav.active {
+        display: block;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+    }
+
+    nav a {
+        display: block;
+        padding: 15px 0;
+        margin: 0;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+
+    .menu-button.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-button.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-button.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+.profile-image {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
